@@ -22,7 +22,8 @@ jobs:
       - name: Prepare PWA
         run: |
           mkdir -p _site
-          unzip -q lasten-laakelaskuri-github-pages.zip -d _site
+          unzip -q lasten-laakelaskuri-pwa.zip -d _extract
+          cp -a _extract/lasten-pwa/. _site/
           test -f _site/index.html
           test -f _site/drugs.json
       - name: Configure Pages
