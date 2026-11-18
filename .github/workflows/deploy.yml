@@ -24,6 +24,7 @@ jobs:
           mkdir -p _site
           unzip -q lasten-laakelaskuri-pwa.zip -d _extract
           cp -a _extract/lasten-pwa/. _site/
+          python3 scripts/remove-search.py
           test -f _site/index.html
           test -f _site/drugs.json
       - name: Configure Pages
